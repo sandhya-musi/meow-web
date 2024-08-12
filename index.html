@@ -1,101 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Meow | Sandhya Bhandari</title>
-	<link rel="icon" href="img/musi-icon.png">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meow | Personal Gallery</title>
+  <link rel="icon" href="/img/musi-icon.png">
 
-	<link rel="stylesheet"
-  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-	
-
-	<!--------header---->
-	<header>
-		<a href="index.html" class="logo" target="_self"><img src="img/meow.png"></a>
-		<div class="bx bx-menu" id="menu-icon"></div>
-
-		<ul class="navlist">
-			<li><a href="#home">Home</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#contact">Contact</a></li>
-		</ul>
-		<a href="login.html" target="_self" class="top-btn">LOGIN</a>
-		
-	</header>
-	
-	<!--------home---->
-	<section class="home" id="home">
-		<div class="home-text">
-			<h3>Hey, It's me</h3>
-			<h1>Sandhya Bhandari</h1>
-			<h5>A creative student <span>from Sunwal</span></h5>
-			<p>Dedicated to my Work and Study...<br>  Personal & Portfolio Site...<p>
-			<div class="social">
-				<a href="https://www.facebook.com/meow.0923" target="_self"><i class='bx bxl-facebook'></i></a>
-				<a href="https://www.instagram.com/sandhayaaaa9/" target="_self"><i class='bx bxl-instagram' ></i></a>
-				<a href="mailto:sandhyabhandari686@gmail.com" target="_self"><i class='bx bxl-gmail' ></i></a>
-				<a href="https://api.whatsapp.com/send?phone=%2B9779848612744" target="_self"><i class='bx bxl-whatsapp' ></i></a>
-			</div>
-			<a href="#about" class="btn">About Me</a>
-		</div>
-
-		<div class="home-img">
-			<img src="img/main-photo.png">
-		</div>
-	</section>
 
 
-<!--------About---->
-<section class="about" id="about">
-	<div class="about-img">
-	<img src="img/about.png">
-	</div>
 
-	<div class="about-text">
-		<h3>Student</h3>
-		<h2>Passionate & Dedicated <br>To learn something new each day</h2>
-		<p>	"Hey I’m Sandhya Bhandari, a passionate individual with a love for family & my passion. I thrive on creativity, enjoy exploring new ideas, and am always eager to learn and grow. Whether it’s gonna be or not, but i bring enthusiasm and dedication to everything I do."<pre>Thank You 😊</pre></p>
-		<a href="404.html" target="_self" class="btn">My Notes</a>
-	</div>
-</section>
 
-	</section>
+<body onload="myFunction()" style="margin:0;">
+  <div id="loader">
+    <img src="musi-loder.gif" alt="Loading..." width="" height="100%" style="margin-left: -40%;">
+  </div>
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+  <div id="main">
+    <div class="overlayzoom">
+      <div class="close">
+        <i class="ri-close-line"></i>
+      </div>
+      <div class="main_over_photos">
+      </div>
+      <div class="dl"></div>
+    </div>
+    <nav>
+      <h1><a href="\#"><span>Go</span> BACK</a></h1>
+    
+    </nav>
+      
 
-	<!--------contact---->
-	<section class="contact" id="contact">
-		<div class="container">
-			<div class="center">
-				<h3>Don't Even Dare To Contact ! </h3>
-				<p>Don't like forms? Well that's Good !</p>
-			</div>
 
-			<div class="action">
-				<form>
-					<input type="email" name="email" placeholder="Enter Your email" required>
-					<input type="submit" name="submit" value="Submit">
-				</form>
-			</div>
-		</div>
-	</section>
 
-	<!--------ends---->
-	<div class="ends">
-		<p>&copy; All Rights Reserved 2024. Website by <a href="https://parbhumahatchhetry.com.np/" target="_blank">Parbhu</a></p>
-	</div>
+        
+        <!-- PHOTOS UPLOAD -->
 
-	<script src="https://unpkg.com/scrollreveal"></script>
+        <div class="photos">
+          <img src="Collection/Musi-1.JPG" alt="Meow">
+          <img src="Collection/Musi-2.JPG" alt="Meow">
+          <img src="Collection/Musi-3.JPG" alt="Meow">
+          <img src="Collection/Musi-4.JPG" alt="Meow">
+          <img src="Collection/Musi-4.JPG" alt="Meow">
+          <img src="Collection/Musi-5.JPG" alt="Meow">
+          <img src="Collection/Musi-6.JPG" alt="Meow">
+          <img src="Collection/Musi-7.JPG" alt="Meow">
+          <img src="Collection/Musi-8.JPG" alt="Meow">
+          <img src="Collection/Musi-9.JPG" alt="Meow">
+          <img src="Collection/Musi-10.JPG" alt="Meow">
+          <img src="Collection/Musi-11.JPG" alt="Meow">
+          <img src="Collection/Musi-12.JPG" alt="Meow">
+          <img src="Collection/Musi-13.JPG" alt="Meow">
+          <img src="Collection/Musi-14.JPG" alt="Meow">
+          <img src="Collection/Musi-15.JPG" alt="Meow">
+          <img src="Collection/Musi-16.JPG" alt="Meow">
+          <img src="Collection/Musi-17.JPG" alt="Meow">
+          <img src="Collection/Musi-18.JPG" alt="Meow">
+          <img src="Collection/Musi-19.JPG" alt="Meow">
+          <img src="Collection/Musi-20.JPG" alt="Meow">
+          <img src="Collection/Musi-21.JPG" alt="Meow">
+          <img src="Collection/Musi-22.JPG" alt="Meow">
+          <img src="Collection/Musi-23.JPG" alt="Meow">
+          <img src="Collection/Musi-24.JPG" alt="Meow">
+          <img src="Collection/Musi-25.JPG" alt="Meow">
+          <img src="Collection/Musi-26.JPG" alt="Meow">
+          <img src="Collection/Musi-27.JPG" alt="Meow">
+          <img src="Collection/Musi-28.JPG" alt="Meow">
+          <img src="Collection/Musi-29.JPG" alt="Meow">
+          <img src="Collection/Musi-30.JPG" alt="Meow">
+          <img src="Collection/Musi-31.JPG" alt="Meow">
+          <img src="Collection/Musi-32.JPG" alt="Meow">
+          <img src="Collection/Musi-33.JPG" alt="Meow">
+          <img src="Collection/Musi-34.JPG" alt="Meow">
+          <img src="Collection/Musi-35.JPG" alt="Meow">
+          <img src="Collection/Musi-36.JPG" alt="Meow">
+          <img src="Collection/Musi-37.JPG" alt="Meow">
+          <img src="Collection/Musi-38.JPG" alt="Meow">
+          <img src="Collection/Musi-39.JPG" alt="Meow">
+          <img src="Collection/Musi-40.JPG" alt="Meow">
+          <img src="Collection/Musi-41.JPG" alt="Meow">
+          <img src="Collection/Musi-42.JPG" alt="Meow">
+          <img src="Collection/Musi-43.JPG" alt="Meow">
+          <img src="Collection/Musi-44.JPG" alt="Meow">
+          <img src="Collection/Musi-45.JPG" alt="Meow">
+          <img src="Collection/Musi-46.JPG" alt="Meow">
+          <img src="Collection/Musi-47.JPG" alt="Meow">
+          <img src="Collection/Musi-48.JPG" alt="Meow">
+          <img src="Collection/Musi-49.JPG" alt="Meow">
+          <img src="Collection/Musi-50.JPG" alt="Meow">
+          <img src="Collection/Musi-51.JPG" alt="Meow">
+          <img src="Collection/Musi-52.JPG" alt="Meow">
+          <img src="Collection/Musi-53.JPG" alt="Meow">
+          <img src="Collection/Musi-54.JPG" alt="Meow">
+          <img src="Collection/Musi-55.JPG" alt="Meow">
+          <img src="Collection/Musi-56.JPG" alt="Meow">
+          <img src="Collection/Musi-57.JPG" alt="Meow">
+          <img src="Collection/Musi-58.JPG" alt="Meow">
+          <img src="Collection/Musi-59.JPG" alt="Meow">
+          <img src="Collection/Musi-60.JPG" alt="Meow">
+          <img src="Collection/Musi-61.JPG" alt="Meow">
+          <img src="Collection/Musi-62.JPG" alt="Meow">
+          <img src="Collection/Musi-63.JPG" alt="Meow">
+          <img src="Collection/Musi-64.JPG" alt="Meow">
+          <img src="Collection/Musi-65.JPG" alt="Meow">
+          <img src="Collection/Musi-66.JPG" alt="Meow">
+          <img src="Collection/Musi-67.JPG" alt="Meow">
+          <img src="Collection/Musi-68.JPG" alt="Meow">
+          <img src="Collection/Musi-69.JPG" alt="Meow">
+          <img src="Collection/Musi-70.JPG" alt="Meow">
+          <img src="Collection/Musi-71.JPG" alt="Meow">
+          <img src="Collection/Musi-72.JPG" alt="Meow">
+          <img src="Collection/Musi-73.JPG" alt="Meow">
+          <img src="Collection/Musi-74.JPG" alt="Meow">
+          <img src="Collection/Musi-75.JPG" alt="Meow">
+          <img src="Collection/Musi-76.JPG" alt="Meow">
+          <img src="Collection/Musi-77.JPG" alt="Meow">
+          <img src="Collection/Musi-78.JPG" alt="Meow">
+          <img src="Collection/Musi-79.JPG" alt="Meow">
+          <img src="Collection/Musi-80.JPG" alt="Meow">
+          <img src="Collection/Musi-81.JPG" alt="Meow">
+          <img src="Collection/Musi-82.JPG" alt="Meow">
+          <img src="Collection/Musi-83.JPG" alt="Meow">
+          <img src="Collection/Musi-84.JPG" alt="Meow">
+          <img src="Collection/Musi-85.JPG" alt="Meow">
+          <img src="Collection/Musi-86.JPG" alt="Meow">
+          <img src="Collection/Musi-87.JPG" alt="Meow">
+          <img src="Collection/Musi-88.JPG" alt="Meow">
+          <img src="Collection/Musi-89.JPG" alt="Meow">
+          <img src="Collection/Musi-90.JPG" alt="Meow">
+          <img src="Collection/Musi-91.JPG" alt="Meow">
+          <img src="Collection/Musi-92.JPG" alt="Meow">
+          <img src="Collection/Musi-93.JPG" alt="Meow">
+          <img src="Collection/Musi-94.JPG" alt="Meow">
+          <img src="Collection/Musi-95.JPG" alt="Meow">
+          <img src="Collection/Musi-96.JPG" alt="Meow">
+          <img src="Collection/Musi-97.JPG" alt="Meow">
+          <img src="Collection/Musi-98.JPG" alt="Meow">
+          <img src="Collection/Musi-99.JPG" alt="Meow">
+          <img src="Collection/Musi-100.JPG" alt="Meow">
+        </div>
+      </div>
+      <div id="Contact" class="section-4">
+        <div class="line"></div>
+        <div class="dabba">
+          <div style="display: flex;align-items: center;gap: 2vw;">
+            <p><span>&copy; All Rights Reserved 2024. Website by <a href="https://parbhumahatchhetry.com.np/" target="_blank">Parbhu</a></span> </p>
+             </div>
+            </a>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<!--------Link to js---->
-	<script type="text/javascript" src="js/script.js"></script>
-	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"
+    integrity="sha512-8AjW5l765ApzGk1tv9UXvcf0+CPrvJlFtmf6pPLM3AWcPM8+9aOSTjw29Sq7bQ/HJdqGjnQ3s8ztg8+ceZqwPQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
+
+  
 </body>
+
 </html>
