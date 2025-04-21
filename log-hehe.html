@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meow | Login</title>
+  <link rel="icon" href="img/musi-icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Roboto" rel="stylesheet">
+  <style>
+     *, *:after, *:before {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: rgba(255, 64, 129, 1.25);
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .panda {
+      position: relative;
+      width: 200px;
+      margin: 50px auto;
+    }
+
+    .face {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border-radius: 100%;
+      margin: 50px auto;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, .15);
+      z-index: 50;
+      position: relative;
+    }
+
+    .ear {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #000;
+      z-index: 5;
+      border: 10px solid #fff;
+      left: -15px;
+      top: -15px;
+      border-radius: 100%;
+    }
+
+    .ear:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #000;
+      z-index: 5;
+      border: 10px solid #fff;
+      left: 125px;
+      top: -15px;
+      border-radius: 100%;
+    }
+
+    .eye-shade {
+      background: #000;
+      width: 50px;
+      height: 80px;
+      margin: 10px;
+      position: absolute;
+      top: 35px;
+      left: 25px;
+      transform: rotate(220deg);
+      border-radius: 25px / 20px 30px 35px 40px;
+    }
+
+    .eye-shade.rgt {
+      transform: rotate(140deg);
+      left: 105px;
+    }
+
+    .eye-white {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      background: #fff;
+      z-index: 500;
+      left: 40px;
+      top: 80px;
+      overflow: hidden;
+    }
+
+    .eye-white.rgt {
+      right: 40px;
+      left: auto;
+    }
+
+    .eye-ball {
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      left: 20px;
+      top: 20px;
+      max-width: 10px;
+      max-height: 10px;
+      transition: .1s;
+    }
+
+    .eye-ball:after {
+      content: '';
+      background: #000;
+      position: absolute;
+      border-radius: 100%;
+      right: 0;
+      bottom: 0px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .nose {
+      position: absolute;
+      height: 20px;
+      width: 35px;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 50px 20px / 30px 15px;
+      transform: rotate(15deg);
+      background: #000;
+    }
+
+    .body {
+      background: #fff;
+      position: absolute;
+      top: 200px;
+      left: -20px;
+      border-radius: 100px 100px 100px 100px / 126px 126px 96px 96px;
+      width: 250px;
+      height: 282px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    }
+
+    .hand {
+      width: 40px;
+      height: 30px;
+      border-radius: 50px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
+      background: #000;
+      margin: 5px;
+      position: absolute;
+      top: 70px;
+      left: -25px;
+    }
+
+    .hand:after, .hand:before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 30px;
+      border-radius: 50px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, .15);
+      background: #000;
+      left: -5px;
+      top: 11px;
+    }
+
+    .hand:before {
+      top: 26px;
+    }
+
+    .hand.rgt {
+      left: auto;
+      right: -25px;
+    }
+
+    .hand.rgt:after, .hand.rgt:before {
+      left: auto;
+      right: -5px;
+    }
+
+    .foot {
+      top: 360px;
+      left: -80px;
+      position: absolute;
+      background: #000;
+      z-index: 1400;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+      border-radius: 40px 40px 39px 40px / 26px 26px 63px 63px;
+      width: 82px;
+      height: 120px;
+    }
+
+    .foot:after {
+      content: '';
+      width: 55px;
+      height: 65px;
+      background: #222;
+      border-radius: 100%;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .finger {
+      position: absolute;
+      width: 25px;
+      height: 35px;
+      background: #222;
+      border-radius: 100%;
+      top: 10px;
+      right: 5px;
+    }
+
+    .finger:after, .finger:before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 35px;
+      background: #222;
+      border-radius: 100%;
+      right: 30px;
+      top: 0;
+    }
+
+    .finger:before {
+      right: 55px;
+      top: 5px;
+    }
+
+    .foot.rgt {
+      left: auto;
+      right: -80px;
+    }
+
+    .foot.rgt .finger {
+      left: 5px;
+      right: auto;
+    }
+
+    .foot.rgt .finger:after {
+      left: 30px;
+      right: auto;
+    }
+
+    .foot.rgt .finger:before {
+      left: 55px;
+      right: auto;
+    }
+
+    form {
+      display: none;
+      max-width: 400px;
+      padding: 20px 40px;
+      background: #fff;
+      height: 300px;
+      margin: auto;
+      display: block;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, .15);
+      transition: .3s;
+      position: relative;
+      transform: translateY(-100px);
+      z-index: 500;
+      border: 1px solid #eee;
+    }
+
+    form.up {
+      transform: translateY(-180px);
+    }
+
+    h1 {
+      color: #FF4081;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .btn {
+      background: #fff;
+      padding: 5px;
+      width: 150px;
+      height: 35px;
+      border: 1px solid #FF4081;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: .3s;
+      box-shadow: 0 50px #FF4081 inset;
+      color: #fff;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 #FF4081 inset;
+      color: #FF4081;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    .form-group {
+      position: relative;
+      font-size: 15px;
+      color: #666;
+    }
+
+    .form-group + .form-group {
+      margin-top: 30px;
+    }
+
+    .form-label {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 5px;
+      transition: .3s;
+    }
+
+    .form-control {
+      width: 100%;
+      position: relative;
+      z-index: 3;
+      height: 35px;
+      background: none;
+      border: none;
+      padding: 5px 0;
+      transition: .3s;
+      border-bottom: 1px solid #777;
+      color: #555;
+    }
+
+    .form-control:invalid {
+      outline: none;
+    }
+
+    .form-control:focus, .form-control:valid {
+      outline: none;
+      box-shadow: 0 1px #FF4081;
+      border-color: #FF4081;
+    }
+
+    .form-control:focus + .form-label, .form-control:valid + .form-label {
+      font-size: 12px;
+      color: #FF4081;
+      transform: translateY(-15px);
+    }
+
+    .alert {
+      position: absolute;
+      color: #f00;
+      font-size: 16px;
+      right: -180px;
+      top: -300px;
+      z-index: 200;
+      padding: 30px 25px;
+      background: #fff;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0);
+      transition: .4s .6s linear;
+    }
+
+    .alert:after, .alert:before {
+      content: '';
+      position: absolute;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+      border-radius: 50%;
+    }
+
+    .alert:after {
+      width: 25px;
+      height: 25px;
+      left: -19px;
+      bottom: -8px;
+    }
+
+    .alert:before {
+      width: 15px;
+      height: 15px;
+      left: -35px;
+      bottom: -25px;
+    }
+
+    .wrong-entry {
+      animation: wrong-log 0.3s;
+    }
+
+    .wrong-entry .alert {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @keyframes eye-blink {
+      to {
+        height: 30px;
+      }
+    }
+
+    @keyframes wrong-log {
+      0%, 100% {
+        left: 0px;
+      }
+
+      20%, 60% {
+        left: 20px;
+      }
+
+      40%, 80% {
+        left: -20px;
+      }
+    }
+
+    /* New styles for the banner */
+    .banner {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FF4081;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+      z-index: 1000;
+    }
+
+    .banner.show {
+      display: block;
+      animation: showBanner 1s ease-out;
+    }
+
+    .banner.hide {
+      animation: hideBanner 1s ease-in forwards;
+    }
+
+    @keyframes showBanner {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    @keyframes hideBanner {
+      from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+      }
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    #togglePassword {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 18px;
+      color: #777;
+      z-index: 100; /* Ensure it's on top */
+    }
+  </style>
+</head>
+<body>
+    <div class="panda">
+        <div class="ear"></div>
+        <div class="face">
+          <div class="eye-shade"></div>
+          <div class="eye-white">
+            <div class="eye-ball"></div>
+          </div>
+          <div class="eye-shade rgt"></div>
+          <div class="eye-white rgt">
+            <div class="eye-ball"></div>
+          </div>
+          <div class="nose"></div>
+        </div>
+        <div class="body"></div>
+        <div class="foot">
+          <div class="finger"></div>
+        </div>
+        <div class="foot rgt">
+          <div class="finger"></div>
+        </div>
+      </div>
+
+  <div class="banner" id="successBanner">Welcome Musi ❤️</div>
+
+  <form id="loginForm">
+    <div class="hand"></div>
+    <div class="hand rgt"></div>
+    <h1>Meow Login</h1>
+    <div class="form-group">
+      <input id="username" type="text" required="required" class="form-control"/>
+      <label class="form-label">Username</label>
+    </div>
+    <div class="form-group">
+      <input id="password" type="password" required="required" class="form-control"/>
+      <label class="form-label">Password</label>
+      <i id="togglePassword" class="fa fa-eye"></i> <!-- Eye Icon -->
+      <p class="alert">Invalid Credentials..!!</p>
+    </div>
+    
+      <button type="submit" class="btn">Login</button>
+    </div>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+  // Other code...
+
+  // Toggle password visibility
+  $('#togglePassword').on('click', function() {
+    const passwordField = $('#password');
+    const type = passwordField.attr('type') === 'password' ? 'text' : 'password';
+    passwordField.attr('type', type);
+
+    // Toggle eye slash icon
+    $(this).toggleClass('fa-eye fa-eye-slash');
+  });
+  
+  // Other code...
+});
+
+    $(document).ready(function() {
+      function admin() {
+        window.location.href = "\hehe";
+      }
+
+      $('#password').focusin(function(){
+        $('form').addClass('up');
+      });
+      
+      $('#password').focusout(function(){
+        $('form').removeClass('up');
+      });
+
+      // Panda Eye move
+      $(document).on("mousemove", function(event) {
+        var dw = $(document).width() / 15;
+        var dh = $(document).height() / 15;
+        var x = event.pageX / dw;
+        var y = event.pageY / dh;
+        $('.eye-ball').css({
+          width: x,
+          height: y
+        });
+      });
+
+      // Validation and Redirect
+      $('#loginForm').submit(function(event) {
+        event.preventDefault();
+        
+        var email = $('#username').val();
+        var password = $('#password').val();
+
+        if (email === "9804430709" && password === "Sandhya@002") {
+          $('#successBanner').addClass('show');
+          setTimeout(function() {
+            $('#successBanner').addClass('hide');
+            setTimeout(function() {
+              admin();
+            }, 1000); // Wait for the hide animation to complete before redirecting
+          }, 2000); // Duration to show the banner
+        } else if (email === "9848612744" && password === "Sandhya@002") {
+          $('#successBanner').addClass('show');
+          setTimeout(function() {
+            $('#successBanner').addClass('hide');
+            setTimeout(function() {
+              admin();
+            }, 1000); // Wait for the hide animation to complete before redirecting
+          }, 2000); // Duration to show the banner
+        
+        } else {
+          $('form').addClass('wrong-entry');
+          setTimeout(function() { 
+            $('form').removeClass('wrong-entry');
+          }, 5000);
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
